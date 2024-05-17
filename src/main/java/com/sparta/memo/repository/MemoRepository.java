@@ -26,6 +26,7 @@ public class MemoRepository {
     public Memo save(Memo memo) {
         KeyHolder keyHolder = new GeneratedKeyHolder(); // 기본 키를 반환받기 위한 객체
 
+
         String sql = "INSERT INTO memo (username, contents) VALUES (?, ?)";
         jdbcTemplate.update( con -> {
                     PreparedStatement preparedStatement = con.prepareStatement(sql,
